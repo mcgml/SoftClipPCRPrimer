@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 public class Main {
     private static final Logger log = Logger.getLogger(Main.class.getName());
     private static final String program = "SoftClipPCRPrimers";
-    private static final String version = "1.0.0";
+    private static final String version = "1.1.0";
 
     public static void main(String[] args) throws IOException {
 
@@ -77,7 +77,7 @@ public class Main {
 
                 //loop over BED records
                 for (GenomicLocation genomicLocation : genomicLocations){
-                    log.log(Level.INFO, "Inspecting region: " + genomicLocation + " ...");
+                    log.log(Level.FINE, "Inspecting region: " + genomicLocation + " ...");
 
                     //query alignments
                     SAMRecordIterator samRecordIterator = samReader.queryAlignmentStart(genomicLocation.getContig(), genomicLocation.getStartPosition());
